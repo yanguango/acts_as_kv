@@ -1,4 +1,5 @@
 ConfigTable
+
 ===========
 In Our project, we need to store some config data in mysql,like key-value data.
 I create a cofig table to store these data,and the config model has set,get,drop method,
