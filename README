@@ -1,16 +1,13 @@
-ConfigTable
+ActsAsKv
+========
 
-===========
-In Our project, we need to store some config data in mysql,like key-value data.
-I create a cofig table to store these data,and the config model has set,get,drop method,
-it's easy to read or write the config infomation.
+Introduction goes here.
 
 
 Example
 =======
-ConfigTable.set 'charge_plan',{:min => 10, :max => 50}
-ConfigTable.get 'charge_plan'
 
-Installation
-=======
-git clone git@github.com:isamsam/config_table.git
+Example goes here.
+
+
+Copyright (c) 2010 [name of plugin creator], released under the MIT license
