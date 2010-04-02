@@ -1,13 +1,16 @@
 ActsAsKv
 ========
 
-Introduction goes here.
-
+ActsAsKv is a key-value simulate under relational db
 
 Example
 =======
 
-Example goes here.
+Suppose your model name is  KvDB
 
+You can do:
+	KvDb.set(:key_a, { :a => 1})
+	KvDb.get(:key_a) # { :a => 1}
+	KvDb.drop(:key_a) # 
 
-Copyright (c) 2010 [name of plugin creator], released under the MIT license
+Copyright (c) 2010 [rociiu.yu@gmail.com, yanguango@gmail.com], released under the MIT license
