@@ -1,12 +1,15 @@
 require File.expand_path(File.dirname(__FILE__) + "/spec_helper")
 require "acts_as_kv"
+require "acts_as_kv/version"
 
 describe "ActsAsKv" do
   
   before(:each) do
     KvDb.send(:include, ActsAsKv)
   end
-    
+  
+  it { ActsAsKv::VERSION.should == '0.0.1' }
+  
   describe ".get, .set" do
     
     it "should have get method" do
