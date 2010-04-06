@@ -43,4 +43,14 @@ describe "ActsAsKv" do
     
   end
   
+  describe ".rename" do
+    
+    it "should rename the key correctly" do
+      pending
+    end
+  end
+  
+  describe ".set" do
+    
+  end
 end
