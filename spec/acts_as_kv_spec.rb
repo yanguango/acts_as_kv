@@ -47,7 +47,6 @@ describe "ActsAsKv" do
   describe ".rename" do
     
     it "should rename the key correctly" do
-      pending
       KvDb.set(:key_d, { :d => 1})
       orgin_value_for_key_d = KvDb.get(:key_d)
       KvDb.rename(:key_d, :key_e)

@@ -5,6 +5,7 @@ module ActsAsKv
     base.send(:serialize, :value)
   end
   
+  class KeyNotFound < StandardError; end
   class ValueNotFound < StandardError; end
   
   module ClassMethods
@@ -33,6 +34,15 @@ module ActsAsKv
       object = self.find_by_key(key.to_s)
       if object
         object.destroy
+      end
+    end
+    
+    def rename(key,new_key)
+      object = self.find_by_key(key.to_s)
+      if object
+        object.update_attributes(:key => new_key.to_s)
+      else
+        raise KeyNotFound.new("key: #{key} not found")
       end
     end
     
