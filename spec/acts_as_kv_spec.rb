@@ -6,6 +6,7 @@ describe "ActsAsKv" do
   
   before(:each) do
     KvDb.send(:include, ActsAsKv)
+    KvDb.set(:key_a, { :a => 1})
   end
   
   it { ActsAsKv::VERSION.should == '0.0.1' }
@@ -47,10 +48,21 @@ describe "ActsAsKv" do
     
     it "should rename the key correctly" do
       pending
+      KvDb.set(:key_d, { :d => 1})
+      orgin_value_for_key_d = KvDb.get(:key_d)
+      KvDb.rename(:key_d, :key_e)
+      lambda { KvDb.get(:key_d) }.should raise_error
+      KvDb.get(:key_e).should == orgin_value_for_key_d
     end
+    
   end
   
   describe ".set" do
     
+    it "should accept set as value" do
+      pending
+    end
+    
   end
+  
 end

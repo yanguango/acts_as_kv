@@ -1,10 +1,8 @@
 require 'spec'
 require 'rubygems'
-require 'ruby-debug'
-require 'active_record'
+gem 'activerecord', '<=2.3.5'
+require 'active_record' 
 
-ENV['TZ'] = 'UTC'
-Time.zone = 'Eastern Time (US & Canada)'
 
 ActiveRecord::Base.establish_connection(:adapter => "sqlite3", :database => ":memory:")
 ActiveRecord::Base.configurations = true
@@ -14,7 +12,7 @@ ActiveRecord::Schema.define(:version => 1) do
   
   create_table :kv_dbs do |t|
     t.string :key
-    t.string :value
+    t.text :value
   end
   
 end
